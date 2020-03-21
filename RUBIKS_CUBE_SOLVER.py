@@ -15,13 +15,6 @@ def change_color():
 
 
 
-
-
-
-
-
-
-
 Button_left = Button(master, text = '', height = 4, width = 3, bg = 'Green', bd = 4)
 Button_left.grid(row=2, column = 0)
 
@@ -1007,7 +1000,7 @@ while True:
 
 
 
-########## AHSAN OR FASIH KA KAMAAL ##########
+########## SOLVING ALGORITHM ##########
 
 
 ###Rotation_Functions###
@@ -3088,9 +3081,10 @@ def last_layer_solver(cube, moves, states):
 
 
 ##################################################################
-
+import time
+start = time.time()
 cube_input = final_string
-print(cube_input)
+#print(cube_input)
 
 def final_solved_cube(cube_input):
     moves = []
@@ -3116,8 +3110,11 @@ def final_solved_cube(cube_input):
 
 
 final_cube, moves, states = final_solved_cube(cube_input)
-print(moves)
-print(final_cube)
+#print(moves)
+end = time.time()
+print('Solution time: ', end-start)
+print('Number of moves: ', len(moves))
+#print(final_cube)
 #print(states)
 
 #######################################################################
@@ -3131,7 +3128,7 @@ print(final_cube)
 
 
 
-############################### ME BACK ###############################
+###################### DISPLAYING SOLUTION STEPS ######################
 
 
 
@@ -3445,7 +3442,7 @@ for faces, instructions in zip(states, moves):
         ##### FRONT FACE ####
 
 
-        master2.after(4000, Button10.config(bg=s))
+        master2.after(1000, Button10.config(bg=s))
         master2.after(0, Button11.config(bg=t))
         master2.after(0, Button12.config(bg=u))
         master2.after(0, Button13.config(bg=v))
